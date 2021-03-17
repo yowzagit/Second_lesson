@@ -55,3 +55,9 @@ import org.junit.jupiter.api.AfterEach;
 
 import org.junit.jupiter.api.AfterAll;
 
+
+//исключающее по тегу
+//task without_one_test(type: Test) {
+//    useJUnitPlatform {
+//        excludeTags 'one'
+//    }
