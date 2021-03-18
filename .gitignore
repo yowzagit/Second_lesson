@@ -31,11 +31,11 @@
 allure-results/
 gradle/
 build/
+garbage/
 bin/
 out/
 logs/
 target/
-garbage/
 .classpath
 .project
 .settings/org.eclipse.buildship.core.prefs
