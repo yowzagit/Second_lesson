@@ -1,11 +1,12 @@
 import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class Autotest_Student_Registration_Form {
+public class AutotestStudentRegistrationForm {
 
 
     @BeforeAll
@@ -46,7 +47,9 @@ public class Autotest_Student_Registration_Form {
         $(".react-datepicker__year-select").selectOption(birthYear);
         $(".react-datepicker__day.react-datepicker__day--013").click();
 
-        $("#subjectsInput").setValue(subjects).pressEnter();
+
+        $("#subjectsInput").val("ma");
+        $(byText(subjects)).click();
 
         $("#currentAddress").setValue(address);
 
@@ -61,7 +64,19 @@ public class Autotest_Student_Registration_Form {
         $("#submit").click();
 
         //проверка
-        $(".table").shouldHave(text(name), text(lastName), text(email), text(sex), text(number), text(birthMonth), text(birthYear), text(subjects), text(hobbies), text(address), text("per.png"), text(state), text(city));
+        $(".table").shouldHave(text(name),
+                text(lastName),
+                text(email),
+                text(sex),
+                text(number),
+                text(birthMonth),
+                text(birthYear),
+                text(subjects),
+                text(hobbies),
+                text(address),
+                text("per.png"),
+                text(state),
+                text(city));
 
         $("#closeLargeModal").click();
 
